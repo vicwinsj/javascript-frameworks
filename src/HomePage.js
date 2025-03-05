@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -14,8 +16,8 @@ const HomePage = () => {
           throw new Error("Failed to fetch products");
         }
         const data = await response.json();
-        console.log("Fetched products:", data);
         setProducts(data.data);
+        setSearchResults(data.data);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -25,18 +27,30 @@ const HomePage = () => {
     fetchProducts();
   }, []);
 
+  const handleSearch = (query) => {
+    if (!query) {
+      setSearchResults(products);
+      return;
+    }
+    const filtered = products.filter((product) =>
+      product.title.toLowerCase().includes(query.toLowerCase())
+    );
+    setSearchResults(filtered);
+  };
+
   if (loading) return <p>Loading products...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <div>
       <h1>Products</h1>
+      <SearchBar onSearch={handleSearch} />
       <div className="product-list">
-        {products.length > 0 ? (
-          products.map((product) => (
+        {searchResults.length > 0 ? (
+          searchResults.map((product) => (
             <div key={product.id} className="product-card">
               <img src={product.imageUrl} alt={product.name} />
-              <h2>{product.name}</h2>
+              <h2>{product.title}</h2>
               <p>{product.description}</p>
               <p>Price: ${product.discountedPrice}</p>
               <Link to={`/product/${product.id}`}>View Product</Link>
