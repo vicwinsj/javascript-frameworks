@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar";
+import SearchBar from "../components/SearchBar";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -49,11 +49,13 @@ const HomePage = () => {
         {searchResults.length > 0 ? (
           searchResults.map((product) => (
             <div key={product.id} className="product-card">
-              <img src={product.imageUrl} alt={product.name} />
-              <h2>{product.title}</h2>
-              <p>{product.description}</p>
-              <p>Price: ${product.discountedPrice}</p>
-              <Link to={`/product/${product.id}`}>View Product</Link>
+              <Link to={`/product/${product.id}`}>
+                <img src={product.image.url} alt={product.image.alt} />
+                <h2>{product.title}</h2>
+                <p>{product.description}</p>
+                <p>Price: ${product.discountedPrice}</p>
+                <p>View Product</p>
+              </Link>
             </div>
           ))
         ) : (

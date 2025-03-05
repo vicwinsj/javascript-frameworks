@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CartIcon from "./CartIcon";
 
 const Header = () => {
   return (
@@ -12,17 +13,9 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
         </ul>
       </nav>
-      <div className="cart-icon">
-        <Link to="/cart">
-          <span>🛒</span>
-          <span className="cart-count">0</span> {}
-        </Link>
-      </div>
+      <CartIcon></CartIcon>
     </header>
   );
 };
