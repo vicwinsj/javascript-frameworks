@@ -14,7 +14,7 @@ import {
 } from "./ProductStyles";
 import { BaseButton } from "../../components/Button/ButtonStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const ProductPage = () => {
   const { productId } = useParams();
