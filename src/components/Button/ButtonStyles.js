@@ -3,15 +3,18 @@ import styled from "styled-components";
 export const BaseButton = styled.button`
   font-family: "Quicksand", sans-serif;
   text-align: center;
-  text-transform: lowercase;
   font-weight: 600;
-  color: #3c91e6;
   border-radius: 10px;
   padding: 1rem;
-  border: solid 1px #3c91e6;
   background-color: white;
   cursor: pointer;
+  transition: all 0.3s ease-out;
+  }
+`;
 
+export const PrimaryButton = styled(BaseButton)`
+  color: #3c91e6;
+  border: solid 1px #3c91e6;
   &:hover {
     border: solid 1px invisible;
     background-color: #3c91e6;
@@ -19,4 +22,12 @@ export const BaseButton = styled.button`
   }
 `;
 
-export const PrimaryButton = styled(BaseButton)``;
+export const AlternateButton = styled(BaseButton)`
+  background-color: #000000;
+  color: #ffffff;
+  border: solid 1px transparent;
+  &:hover {
+    background-color: #111111;
+    border: solid 1px #000000;
+  }
+`;

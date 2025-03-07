@@ -12,7 +12,7 @@ import {
   ReviewIntro,
   Review,
 } from "./ProductStyles";
-import { BaseButton } from "../../components/Button/ButtonStyles";
+import { PrimaryButton } from "../../components/Button/ButtonStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
@@ -58,9 +58,9 @@ const ProductPage = () => {
           <p>
             $ <strong>{product.discountedPrice}</strong>
           </p>
-          <BaseButton onClick={() => addToCart(product)}>
+          <PrimaryButton onClick={() => addToCart(product)}>
             Add to Cart
-          </BaseButton>
+          </PrimaryButton>
         </ProductInfo>
         <ProductReviews>
           <h2>Reviews</h2>

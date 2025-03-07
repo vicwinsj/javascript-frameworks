@@ -10,7 +10,7 @@ import {
   ItemContent,
   CartTotal,
 } from "./CheckoutStyles";
-import { BaseButton } from "../../components/Button/ButtonStyles";
+import { PrimaryButton } from "../../components/Button/ButtonStyles";
 
 const CheckoutPage = () => {
   const { cart } = useContext(CartContext);
@@ -23,7 +23,7 @@ const CheckoutPage = () => {
   if (cart.length === 0) {
     return (
       <div>
-        <h2>Cart is empty!</h2>
+        <h1>Cart is empty!</h1>
       </div>
     );
   }
@@ -38,7 +38,7 @@ const CheckoutPage = () => {
   return (
     <CheckoutContainer>
       <CartItems>
-        <h2>Cart</h2>
+        <h1>Cart</h1>
         {cart.map((item) => (
           <CartItem key={item.id}>
             <ItemImageContainer>
@@ -69,7 +69,7 @@ const CheckoutPage = () => {
         <p>
           Total: $ <strong>{total.toFixed(2)}</strong>
         </p>
-        <BaseButton onClick={handleCheckout}>Place order</BaseButton>
+        <PrimaryButton onClick={handleCheckout}>Place order</PrimaryButton>
       </CartTotal>
     </CheckoutContainer>
   );

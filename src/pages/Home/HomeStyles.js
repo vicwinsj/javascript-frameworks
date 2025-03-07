@@ -30,7 +30,11 @@ export const ProductCard = styled.div`
   gap: 1rem;
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0px 5px 5px #c0c0c0;
+  background-color: rgb(245, 245, 245);
+
+  &:hover {
+    box-shadow: 0px 5px 5px #c0c0c0;
+  }
 `;
 
 export const ProductContent = styled.div`

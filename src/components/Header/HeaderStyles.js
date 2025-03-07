@@ -19,6 +19,11 @@ export const Logo = styled.a`
   color: white;
   text-transform: lowercase;
   background-color: #3c91e6;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: #367ec6;
+  }
 `;
 
 export const Nav = styled.nav`
@@ -32,7 +37,7 @@ export const NavLink = styled.a`
   text-decoration: none;
   font-size: 1rem;
   font-weight: 600;
-
+  transition: all 0.3s ease-out;
   &:hover {
     background-color: #f1f1f1;
     border-radius: 10px;

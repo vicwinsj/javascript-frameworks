@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { CartContainer, CartBadge } from "./CartStyles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CartIcon } from "./CartStyles";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Cart = () => {
@@ -13,7 +13,7 @@ const Cart = () => {
   return (
     <CartContainer>
       <Link to="/checkout" className="cart-link">
-        <FontAwesomeIcon icon={faCartShopping} />
+        <CartIcon icon={faCartShopping} />
         {totalItems > 0 && <CartBadge>{totalItems}</CartBadge>}
       </Link>
     </CartContainer>
