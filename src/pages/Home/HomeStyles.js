@@ -31,6 +31,7 @@ export const ProductCard = styled.div`
   padding: 1rem;
   border-radius: 1rem;
   background-color: rgb(245, 245, 245);
+  transition: all 0.3s ease-out;
 
   &:hover {
     box-shadow: 0px 5px 5px #c0c0c0;

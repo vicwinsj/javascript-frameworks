@@ -1,4 +1,13 @@
 import React, { useState } from "react";
+import {
+  ContactContainer,
+  ContactForm,
+  ContactInput,
+  ContactMessage,
+  LabelAndInput,
+  ErrorMessage,
+} from "./ContactStyles";
+import { AlternateButton } from "../../components/Button/Button";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -48,63 +57,63 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="contact-container">
+    <ContactContainer>
       <h1>Contact Us</h1>
-      {submitted && (
-        <p className="success-message">Message sent successfully!</p>
-      )}
-      <form onSubmit={handleSubmit}>
-        {/* Full Name */}
-        <div>
-          <label>Full Name:</label>
-          <input
+      <ContactForm onSubmit={handleSubmit}>
+        {/* Name */}
+        <LabelAndInput>
+          <label>Name</label>
+          <ContactInput
             type="text"
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
           />
-          {errors.fullName && <p className="error">{errors.fullName}</p>}
-        </div>
-
-        {/* Subject */}
-        <div>
-          <label>Subject:</label>
-          <input
-            type="text"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-          />
-          {errors.subject && <p className="error">{errors.subject}</p>}
-        </div>
+          {errors.fullName && <ErrorMessage>{errors.fullName}.</ErrorMessage>}
+        </LabelAndInput>
 
         {/* Email */}
-        <div>
-          <label>Email:</label>
-          <input
+        <LabelAndInput>
+          <label>Email</label>
+          <ContactInput
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
           />
-          {errors.email && <p className="error">{errors.email}</p>}
-        </div>
+          {errors.email && <ErrorMessage>{errors.email}.</ErrorMessage>}
+        </LabelAndInput>
+
+        {/* Subject */}
+        <LabelAndInput>
+          <label>Subject</label>
+          <ContactInput
+            type="text"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+          />
+          {errors.subject && <ErrorMessage>{errors.subject}.</ErrorMessage>}
+        </LabelAndInput>
 
         {/* Message Body */}
-        <div>
-          <label>Message:</label>
-          <textarea
+        <LabelAndInput>
+          <label>Message</label>
+          <ContactMessage
+            as="textarea"
             name="body"
             value={formData.body}
             onChange={handleChange}
-          ></textarea>
-          {errors.body && <p className="error">{errors.body}</p>}
-        </div>
+          ></ContactMessage>
+          {errors.body && <ErrorMessage>{errors.body}.</ErrorMessage>}
+        </LabelAndInput>
 
         {/* Submit Button */}
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+        <AlternateButton type="submit">Submit</AlternateButton>
+      </ContactForm>
+
+      {submitted && <p>Message sent successfully!</p>}
+    </ContactContainer>
   );
 };
 

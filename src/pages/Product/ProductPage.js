@@ -12,7 +12,7 @@ import {
   ReviewIntro,
   Review,
 } from "./ProductStyles";
-import { PrimaryButton } from "../../components/Button/ButtonStyles";
+import { PrimaryButton } from "../../components/Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 

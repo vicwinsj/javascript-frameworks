@@ -4,8 +4,13 @@ export const SearchInput = styled.input`
   padding: 1rem;
   width: 20rem;
   max-width: 100%;
-  border: solid 1px gray;
-  border-radius: 5rem;
+  border: solid 1px black;
+  border-radius: 1rem;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: rgb(245, 245, 245);
+  }
 
   &:focus {
     outline: none;

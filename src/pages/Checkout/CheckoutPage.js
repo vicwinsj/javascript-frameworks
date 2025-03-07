@@ -10,7 +10,7 @@ import {
   ItemContent,
   CartTotal,
 } from "./CheckoutStyles";
-import { PrimaryButton } from "../../components/Button/ButtonStyles";
+import { PrimaryButton } from "../../components/Button/Button";
 
 const CheckoutPage = () => {
   const { cart } = useContext(CartContext);

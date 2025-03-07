@@ -10,7 +10,7 @@ import {
   ProductContent,
   ProductCardBottom,
 } from "./HomeStyles";
-import { PrimaryButton } from "../../components/Button/ButtonStyles";
+import { PrimaryButton } from "../../components/Button/Button";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);

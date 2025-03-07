@@ -7,6 +7,5 @@ export const FooterContainer = styled.footer`
   padding: 1rem 2rem;
   width: 100vw;
   height: 100%;
-  background-color: rgb(245, 245, 245);
-  // border-top: solid 1px rgb(150, 150, 150);
+  background-color: #dae1e8;
 `;

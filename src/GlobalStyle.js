@@ -28,6 +28,13 @@ align-items: center;
   ul {
     list-style: none;
   }
+
+  input,
+  textarea {
+  font-family: "Istok Web", sans-serif;
+  font-weight: 400;
+  resize: none;}
+
 `;
 
 export default GlobalStyle;
