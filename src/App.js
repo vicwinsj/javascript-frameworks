@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
-import Layout from "./components/Layout";
-import HomePage from "./pages/HomePage";
-import ContactPage from "./pages/ContactPage";
-import CheckoutPage from "./pages/CheckoutPage";
-import CheckoutSuccessPage from "./pages/CheckoutSuccessPage";
-import ProductPage from "./pages/ProductPage";
+import Layout from "./components/Layout/Layout";
+import HomePage from "./pages/Home/HomePage";
+import ContactPage from "./pages/Contact/ContactPage";
+import CheckoutPage from "./pages/Checkout/CheckoutPage";
+import CheckoutSuccessPage from "./pages/CheckoutSuccess/CheckoutSuccessPage";
+import ProductPage from "./pages/Product/ProductPage";
 
 const App = () => {
   return (

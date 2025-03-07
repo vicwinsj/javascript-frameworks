@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "../components/SearchBar";
+import Search from "../../components/Search/Search";
+import {
+  HomeContainer,
+  ProductGrid,
+  ProductCard,
+  ProductImageContainer,
+  ProductImage,
+  ProductContent,
+  ProductCardBottom,
+} from "./HomeStyles";
+import { PrimaryButton } from "../../components/Button/ButtonStyles";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -42,27 +52,38 @@ const HomePage = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
-      <h1>Products</h1>
-      <SearchBar onSearch={handleSearch} />
-      <div className="product-list">
+    <HomeContainer>
+      <h1>Products for the whole household</h1>
+      <Search onSearch={handleSearch} />
+      <ProductGrid>
         {searchResults.length > 0 ? (
           searchResults.map((product) => (
-            <div key={product.id} className="product-card">
-              <Link to={`/product/${product.id}`}>
-                <img src={product.image.url} alt={product.image.alt} />
-                <h2>{product.title}</h2>
-                <p>{product.description}</p>
-                <p>Price: ${product.discountedPrice}</p>
-                <p>View Product</p>
-              </Link>
-            </div>
+            <Link href={`/product/${product.id}`}>
+              <ProductCard key={product.id}>
+                <ProductImageContainer>
+                  <ProductImage
+                    src={product.image.url}
+                    alt={product.image.alt}
+                  />
+                </ProductImageContainer>
+                <ProductCardBottom>
+                  <ProductContent>
+                    <h2>{product.title}</h2>
+                    <p>{product.description}</p>
+                    <p>Price: ${product.discountedPrice}</p>
+                  </ProductContent>
+                  <PrimaryButton as="a" href={`/product/${product.id}`}>
+                    View Product
+                  </PrimaryButton>
+                </ProductCardBottom>
+              </ProductCard>
+            </Link>
           ))
         ) : (
           <p>No products found.</p>
         )}
-      </div>
-    </div>
+      </ProductGrid>
+    </HomeContainer>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { SearchInput } from "./SearchStyles";
 
-const SearchBar = ({ onSearch }) => {
+const Search = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 
   const handleChange = (event) => {
@@ -10,14 +11,13 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <input
+    <SearchInput
       type="text"
-      placeholder="Search for products ..."
+      placeholder="Search for product"
       value={query}
       onChange={handleChange}
-      style={{ padding: "8px", width: "100%", maxWidth: "300px" }}
     />
   );
 };
 
-export default SearchBar;
+export default Search;
