@@ -8,5 +8,5 @@ export const FooterContainer = styled.footer`
   width: 100vw;
   height: 100%;
   background-color: rgb(245, 245, 245);
-  border-top: solid 1px rgb(150, 150, 150);
+  // border-top: solid 1px rgb(150, 150, 150);
 `;

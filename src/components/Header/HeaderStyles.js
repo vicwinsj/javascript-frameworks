@@ -9,7 +9,7 @@ export const HeaderContainer = styled.header`
   padding: 1rem 2rem;
   background-color: white;
   color: #3c91e6;
-  box-shadow: 0px 5px 5px gray;
+  border-bottom: solid 1px rgb(150, 150, 150);
 `;
 
 export const Logo = styled.a`

@@ -58,8 +58,8 @@ const HomePage = () => {
       <ProductGrid>
         {searchResults.length > 0 ? (
           searchResults.map((product) => (
-            <Link href={`/product/${product.id}`}>
-              <ProductCard key={product.id}>
+            <Link to={`/product/${product.id}`} key={product.id}>
+              <ProductCard>
                 <ProductImageContainer>
                   <ProductImage
                     src={product.image.url}
@@ -70,9 +70,11 @@ const HomePage = () => {
                   <ProductContent>
                     <h2>{product.title}</h2>
                     <p>{product.description}</p>
-                    <p>Price: ${product.discountedPrice}</p>
+                    <p>
+                      $ <strong>{product.discountedPrice}</strong>
+                    </p>
                   </ProductContent>
-                  <PrimaryButton as="a" href={`/product/${product.id}`}>
+                  <PrimaryButton as="a" to={`/product/${product.id}`}>
                     View Product
                   </PrimaryButton>
                 </ProductCardBottom>

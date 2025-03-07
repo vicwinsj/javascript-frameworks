@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const BaseButton = styled.button`
   font-family: "Quicksand", sans-serif;
+  text-align: center;
   text-transform: lowercase;
   font-weight: 600;
   color: #3c91e6;
@@ -9,6 +10,7 @@ export const BaseButton = styled.button`
   padding: 1rem;
   border: solid 1px #3c91e6;
   background-color: white;
+  cursor: pointer;
 
   &:hover {
     border: solid 1px invisible;

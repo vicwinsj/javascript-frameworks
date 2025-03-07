@@ -1,6 +1,20 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import {
+  ProductContainer,
+  ImageContainer,
+  ProductImage,
+  ContentContainer,
+  ProductInfo,
+  ProductReviews,
+  ReviewList,
+  ReviewIntro,
+  Review,
+} from "./ProductStyles";
+import { BaseButton } from "../../components/Button/ButtonStyles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faStar } from "@fortawesome/free-solid-svg-icons";
 
 const ProductPage = () => {
   const { productId } = useParams();
@@ -33,26 +47,43 @@ const ProductPage = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
-      <h1>{product.title}</h1>
-      <img src={product.image.url} alt={product.image.alt} />
-      <p>{product.description}</p>
-      <p>Price: ${product.discountedPrice}</p>
-      <button onClick={() => addToCart(product)}>Add to Cart</button>
-      <h2>Reviews</h2>
-      {product.reviews && product.reviews.length > 0 ? (
-        <ul>
-          {product.reviews.map((review, index) => (
-            <li key={index}>
-              <strong>{review.username}:</strong> {review.description} (⭐{" "}
-              {review.rating})
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No reviews yet.</p>
-      )}
-    </div>
+    <ProductContainer>
+      <ImageContainer>
+        <ProductImage src={product.image.url} alt={product.image.alt} />
+      </ImageContainer>
+      <ContentContainer>
+        <ProductInfo>
+          <h1>{product.title}</h1>
+          <p>{product.description}</p>
+          <p>
+            $ <strong>{product.discountedPrice}</strong>
+          </p>
+          <BaseButton onClick={() => addToCart(product)}>
+            Add to Cart
+          </BaseButton>
+        </ProductInfo>
+        <ProductReviews>
+          <h2>Reviews</h2>
+          {product.reviews && product.reviews.length > 0 ? (
+            <ReviewList>
+              {product.reviews.map((review, index) => (
+                <Review key={index}>
+                  <ReviewIntro>
+                    <strong>
+                      <FontAwesomeIcon icon={faStar} /> {review.rating}
+                    </strong>
+                    {review.username}
+                  </ReviewIntro>{" "}
+                  <em>– {review.description}</em>
+                </Review>
+              ))}
+            </ReviewList>
+          ) : (
+            <p>No reviews yet.</p>
+          )}
+        </ProductReviews>
+      </ContentContainer>
+    </ProductContainer>
   );
 };
 
