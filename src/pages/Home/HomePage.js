@@ -11,6 +11,7 @@ import {
   ProductCardBottom,
 } from "./HomeStyles";
 import { PrimaryButton } from "../../components/Button/Button";
+import Loader from "../../components/Loader/Loader";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -48,18 +49,19 @@ const HomePage = () => {
     setSearchResults(filtered);
   };
 
-  if (loading) return <p>Loading products...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <HomeContainer>
       <h1>Products for the whole household</h1>
       <Search onSearch={handleSearch} />
-      <ProductGrid>
-        {searchResults.length > 0 ? (
-          searchResults.map((product) => (
-            <Link to={`/product/${product.id}`} key={product.id}>
-              <ProductCard>
+      {loading ? (
+        <Loader count={6} />
+      ) : (
+        <ProductGrid>
+          {searchResults.length > 0 ? (
+            searchResults.map((product) => (
+              <ProductCard key={product.id}>
                 <ProductImageContainer>
                   <ProductImage
                     src={product.image.url}
@@ -74,17 +76,17 @@ const HomePage = () => {
                       $ <strong>{product.discountedPrice}</strong>
                     </p>
                   </ProductContent>
-                  <PrimaryButton as="a" to={`/product/${product.id}`}>
+                  <PrimaryButton as="a" href={`/product/${product.id}`}>
                     View Product
                   </PrimaryButton>
                 </ProductCardBottom>
               </ProductCard>
-            </Link>
-          ))
-        ) : (
-          <p>No products found.</p>
-        )}
-      </ProductGrid>
+            ))
+          ) : (
+            <p>No products found.</p>
+          )}
+        </ProductGrid>
+      )}
     </HomeContainer>
   );
 };

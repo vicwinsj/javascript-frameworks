@@ -28,7 +28,7 @@ export const AlternateButton = styled(BaseButton)`
   color: #ffffff;
   border: solid 1px transparent;
   &:hover {
-    background-color: #111111;
+    background-color: #333333;
     border: solid 1px #000000;
   }
 `;

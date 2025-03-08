@@ -18,6 +18,7 @@ align-items: center;
     font-weight: 400;
     background-color: #fff;
     color: #000;
+    margin: 0rem;
   }
 
   a {

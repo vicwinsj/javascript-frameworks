@@ -11,7 +11,7 @@ export const CartIcon = styled(FontAwesomeIcon)`
   color: black;
   transition: all 0.3s ease-out;
   &:hover {
-    color: #111111;
+    color: #333333;
   }
 `;
 

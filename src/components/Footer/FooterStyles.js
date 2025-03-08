@@ -7,5 +7,5 @@ export const FooterContainer = styled.footer`
   padding: 1rem 2rem;
   width: 100vw;
   height: 100%;
-  background-color: #dae1e8;
+  background-color: #e5f2ff;
 `;

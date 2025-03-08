@@ -3,7 +3,19 @@ import styled from "styled-components";
 export const CheckoutContainer = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   gap: 1rem;
+
+@media (min-width: 768px) {
+flex-direction: row;
+`;
+
+export const CheckoutEmpty = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 `;
 
 export const CartItems = styled.div`
@@ -23,8 +35,12 @@ export const CartItem = styled.div`
 
 export const ItemImageContainer = styled.div`
   width: 100%;
-  height: 20rem;
+  height: 10rem;
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    height: 20rem;
+  }
 `;
 
 export const ItemImage = styled.img`
@@ -39,7 +55,10 @@ export const ItemContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
+
+  @media (min-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 export const CartTotal = styled.div`

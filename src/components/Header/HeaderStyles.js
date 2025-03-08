@@ -39,7 +39,7 @@ export const NavLink = styled.a`
   font-weight: 600;
   transition: all 0.3s ease-out;
   &:hover {
-    background-color: #f1f1f1;
+    background-color: #ffefe5;
     border-radius: 10px;
   }
 `;

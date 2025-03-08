@@ -11,4 +11,6 @@ export const LayoutBody = styled.div`
 export const ContentContainer = styled.main`
   max-width: 1000px;
   width: 100%;
+  min-height: 100vh;
+  padding: 0 1rem 0 1rem;
 `;

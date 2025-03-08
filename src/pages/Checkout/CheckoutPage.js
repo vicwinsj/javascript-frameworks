@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import {
   CheckoutContainer,
+  CheckoutEmpty,
   CartItems,
   CartItem,
   ItemImageContainer,
@@ -10,6 +11,7 @@ import {
   ItemContent,
   CartTotal,
 } from "./CheckoutStyles";
+import { AlternateButton } from "../../components/Button/Button";
 import { PrimaryButton } from "../../components/Button/Button";
 
 const CheckoutPage = () => {
@@ -22,9 +24,12 @@ const CheckoutPage = () => {
 
   if (cart.length === 0) {
     return (
-      <div>
+      <CheckoutEmpty>
         <h1>Cart is empty!</h1>
-      </div>
+        <AlternateButton as="a" href="/">
+          Back to Store
+        </AlternateButton>
+      </CheckoutEmpty>
     );
   }
 
@@ -70,6 +75,9 @@ const CheckoutPage = () => {
           Total: $ <strong>{total.toFixed(2)}</strong>
         </p>
         <PrimaryButton onClick={handleCheckout}>Place order</PrimaryButton>
+        <AlternateButton as="a" href="/">
+          Continue Shopping
+        </AlternateButton>
       </CartTotal>
     </CheckoutContainer>
   );

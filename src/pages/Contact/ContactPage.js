@@ -68,6 +68,7 @@ const ContactPage = () => {
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
+            style={errors.subject ? { borderColor: "red" } : {}}
           />
           {errors.fullName && <ErrorMessage>{errors.fullName}.</ErrorMessage>}
         </LabelAndInput>
@@ -80,6 +81,7 @@ const ContactPage = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
+            style={errors.subject ? { borderColor: "red" } : {}}
           />
           {errors.email && <ErrorMessage>{errors.email}.</ErrorMessage>}
         </LabelAndInput>
@@ -92,6 +94,7 @@ const ContactPage = () => {
             name="subject"
             value={formData.subject}
             onChange={handleChange}
+            style={errors.subject ? { borderColor: "red" } : {}}
           />
           {errors.subject && <ErrorMessage>{errors.subject}.</ErrorMessage>}
         </LabelAndInput>
@@ -104,6 +107,7 @@ const ContactPage = () => {
             name="body"
             value={formData.body}
             onChange={handleChange}
+            style={errors.subject ? { borderColor: "red" } : {}}
           ></ContactMessage>
           {errors.body && <ErrorMessage>{errors.body}.</ErrorMessage>}
         </LabelAndInput>

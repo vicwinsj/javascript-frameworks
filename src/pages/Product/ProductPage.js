@@ -7,14 +7,17 @@ import {
   ProductImage,
   ContentContainer,
   ProductInfo,
+  ProductPrice,
   ProductReviews,
   ReviewList,
   ReviewIntro,
   Review,
+  DiscountPercentage,
 } from "./ProductStyles";
 import { PrimaryButton } from "../../components/Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import Loader from "../../components/Loader/Loader";
 
 const ProductPage = () => {
   const { productId } = useParams();
@@ -43,8 +46,12 @@ const ProductPage = () => {
     fetchProduct();
   }, [productId]);
 
-  if (loading) return <p>Loading product details ...</p>;
+  if (loading) return <Loader count={6} />;
   if (error) return <p>Error: {error}</p>;
+
+  const { price, discountedPrice } = product;
+  const discountAmount = price - discountedPrice;
+  const discountPercentage = ((discountAmount / price) * 100).toFixed(0);
 
   return (
     <ProductContainer>
@@ -55,9 +62,16 @@ const ProductPage = () => {
         <ProductInfo>
           <h1>{product.title}</h1>
           <p>{product.description}</p>
-          <p>
-            $ <strong>{product.discountedPrice}</strong>
-          </p>
+          <ProductPrice>
+            <span>
+              $ <strong>{product.discountedPrice}</strong>{" "}
+            </span>
+            {discountPercentage > 0 && (
+              <DiscountPercentage>
+                <strong>{discountPercentage} % off!</strong>
+              </DiscountPercentage>
+            )}
+          </ProductPrice>
           <PrimaryButton onClick={() => addToCart(product)}>
             Add to Cart
           </PrimaryButton>

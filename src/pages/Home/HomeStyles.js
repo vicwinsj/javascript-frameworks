@@ -12,7 +12,6 @@ export const ProductGrid = styled.div`
   display: grid;
   width: 100%;
   gap: 1rem;
-  padding: 1rem;
     grid-template-columns: 1fr;
 
  @media (min-width: 768px) {
@@ -30,7 +29,7 @@ export const ProductCard = styled.div`
   gap: 1rem;
   padding: 1rem;
   border-radius: 1rem;
-  background-color: rgb(245, 245, 245);
+  background-color: #ffefe5;
   transition: all 0.3s ease-out;
 
   &:hover {
