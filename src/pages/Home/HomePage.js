@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Search from "../../components/Search/Search";
 import {
   HomeContainer,
@@ -14,6 +13,10 @@ import { PrimaryButton } from "../../components/Button/Button";
 import Loader from "../../components/Loader/Loader";
 
 const HomePage = () => {
+  useEffect(() => {
+    document.title = "Fyke | Buy all you can think of – online";
+  }, []);
+
   const [products, setProducts] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(true);

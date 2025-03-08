@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { CheckoutSuccessContainer, OrderTitle } from "./CheckoutSuccessStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,6 +6,10 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { AlternateButton } from "../../components/Button/Button";
 
 const CheckoutSuccessPage = () => {
+  useEffect(() => {
+    document.title = "Fyke | Checkout Success";
+  }, []);
+
   const { setCart } = useContext(CartContext);
 
   useEffect(() => {

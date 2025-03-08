@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import {
@@ -15,6 +15,10 @@ import { AlternateButton } from "../../components/Button/Button";
 import { PrimaryButton } from "../../components/Button/Button";
 
 const CheckoutPage = () => {
+  useEffect(() => {
+    document.title = "Fyke | Checkout";
+  }, []);
+
   const { cart } = useContext(CartContext);
   const navigate = useNavigate();
 

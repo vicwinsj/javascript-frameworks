@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ContactContainer,
   ContactForm,
@@ -10,6 +10,10 @@ import {
 import { AlternateButton } from "../../components/Button/Button";
 
 const ContactPage = () => {
+  useEffect(() => {
+    document.title = "Fyke | Contact Us";
+  }, []);
+
   const [formData, setFormData] = useState({
     fullName: "",
     subject: "",

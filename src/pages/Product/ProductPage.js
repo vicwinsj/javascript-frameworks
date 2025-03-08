@@ -27,6 +27,12 @@ const ProductPage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (product) {
+      document.title = `Fyke | ${product.title}`;
+    }
+  }, [product]);
+
+  useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
