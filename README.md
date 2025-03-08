@@ -27,7 +27,7 @@ Fyke is a modern eCommerce web application built with React. It allows users to 
 
 ### Navigate to the project directory:
 
-`cd fed2-js2-ca-vicwinsj`
+`cd javascript-frameworks`
 
 ### Install dependencies:
 
