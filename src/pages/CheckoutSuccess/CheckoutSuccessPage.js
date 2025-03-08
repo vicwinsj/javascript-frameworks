@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { CheckoutSuccessContainer, OrderTitle } from "./CheckoutSuccessStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,7 +23,7 @@ const CheckoutSuccessPage = () => {
         <FontAwesomeIcon icon={faCheck} /> <h1>Order Successful!</h1>
       </OrderTitle>
       <p>Thank you for your purchase.</p>
-      <AlternateButton as="a" href="/">
+      <AlternateButton as={Link} to="/">
         Back to Store
       </AlternateButton>
     </CheckoutSuccessContainer>

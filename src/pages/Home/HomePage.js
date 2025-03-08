@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Search from "../../components/Search/Search";
 import {
   HomeContainer,
@@ -79,7 +80,7 @@ const HomePage = () => {
                       $ <strong>{product.discountedPrice}</strong>
                     </p>
                   </ProductContent>
-                  <PrimaryButton as="a" href={`/product/${product.id}`}>
+                  <PrimaryButton as={Link} to={`/product/${product.id}`}>
                     View Product
                   </PrimaryButton>
                 </ProductCardBottom>

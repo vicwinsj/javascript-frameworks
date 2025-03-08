@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import {
@@ -30,7 +31,7 @@ const CheckoutPage = () => {
     return (
       <CheckoutEmpty>
         <h1>Cart is empty!</h1>
-        <AlternateButton as="a" href="/">
+        <AlternateButton as={Link} to="/">
           Back to Store
         </AlternateButton>
       </CheckoutEmpty>
