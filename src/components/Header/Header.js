@@ -17,7 +17,7 @@ const Header = () => {
           Contact
         </NavLink>
       </Nav>
-      <Cart></Cart>
+      <Cart />
     </HeaderContainer>
   );
 };

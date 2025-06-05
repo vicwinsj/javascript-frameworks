@@ -86,8 +86,8 @@ const ProductPage = () => {
           <h2>Reviews</h2>
           {product.reviews && product.reviews.length > 0 ? (
             <ReviewList>
-              {product.reviews.map((review, index) => (
-                <Review key={index}>
+              {product.reviews.map((review) => (
+                <Review key={review.id}>
                   <ReviewIntro>
                     <strong>
                       <FontAwesomeIcon icon={faStar} /> {review.rating}

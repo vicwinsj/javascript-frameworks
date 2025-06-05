@@ -54,7 +54,6 @@ const ContactPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log("Form submitted:", formData);
       setSubmitted(true);
       setFormData({ fullName: "", subject: "", email: "", body: "" });
     }
@@ -66,8 +65,9 @@ const ContactPage = () => {
       <ContactForm onSubmit={handleSubmit}>
         {/* Name */}
         <LabelAndInput>
-          <label>Name</label>
+          <label htmlFor="fullName">Name</label>
           <ContactInput
+            id="fullName"
             type="text"
             name="fullName"
             value={formData.fullName}
@@ -79,8 +79,9 @@ const ContactPage = () => {
 
         {/* Email */}
         <LabelAndInput>
-          <label>Email</label>
+          <label htmlFor="email">Email</label>
           <ContactInput
+            id="email"
             type="email"
             name="email"
             value={formData.email}
@@ -92,8 +93,9 @@ const ContactPage = () => {
 
         {/* Subject */}
         <LabelAndInput>
-          <label>Subject</label>
+          <label htmlFor="subject">Subject</label>
           <ContactInput
+            id="subject"
             type="text"
             name="subject"
             value={formData.subject}
@@ -105,8 +107,9 @@ const ContactPage = () => {
 
         {/* Message Body */}
         <LabelAndInput>
-          <label>Message</label>
+          <label htmlFor="body">Message</label>
           <ContactMessage
+            id="body"
             as="textarea"
             name="body"
             value={formData.body}
